@@ -1,0 +1,44 @@
+
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+{% block head %}
+
+<style>
+
+    
+    #box{
+
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+</style>
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<br>
+
+<div  id="box" class="container mt-5 mb-5">
+    <h2>Admin - {{auser.username}}</h2>
+
+  <div class="col" >
+    <div class="row">
+ 
+    <a id="links" class="btn btn-outline-info btn-block" href="{% url 'admin:index' %}">Manage user's data</a><br>
+    </div>
+    
+    
+              
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends "basic.html" %}
+{% load static %}
+
+
+{% block head %}
+
+
+<link rel="stylesheet" href="{% static 'teacher/view_profile/forms.css' %}">
+<link rel="stylesheet" href="{% static 'teacher/view_profile/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'teacher/view_profile/base.css' %}">
+
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+<!-- Content -->
+<div id="content" class="colM">
+
+    <div id="content-main">
+
+        <fieldset class="module aligned ">
+
+            <div class="border border-dark rounded-lg mx-auto mt-3 " style="width:600px">
+
+                <div class="container mt-3 ">
+
+                    <div class="mx-auto text-center">
+                        <h2> Teacher Profile - {{ duser.teacher.name }} </h2>
+                    </div>
+
+
+
+
+                    <div class="form-row field-username">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_username">username:</label>
+
+                            <input type="text" name="username" value={{duser.username}} class="vTextField"
+                                maxlength="50" required="" id="id_username">
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row field-name">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_name">Name:</label>
+
+                            <input type="text" name="name" value={{duser.teacher.name}} class="vTextField"
+                                maxlength="50" required="" id="id_name">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-row field-email">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_email">Email:</label>
+
+                            <input type="text" name="email" value={{duser.email}} class="vTextField" maxlength="100"
+                                required="" id="id_email">
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row field-mobile_no">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_mobile_no">Mobile no:</label>
+
+                            <input type="text" name="mobile_no" value={{duser.teacher.mobile_no}} class="vTextField"
+                                maxlength="15" required="" id="id_mobile_no">
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-gender">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_gender">Gender:</label>
+
+                            <input type="text" name="gender" value={{duser.teacher.gender}} class="vTextField"
+                                maxlength="10" required="" id="id_gender">
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row field-department">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_department">Department:</label>
+
+                            <input type="text" name="department" value={{duser.teacher.department}} class="vTextField"
+                                maxlength="30" required="" id="id_department">
+
+
+
+                        </div>
+
+                    </div>
+                    
+
+                    {% if request.user.teacher %}
+
+                        <div class="comtainer mt-3 mb-3 ml-4 mr-4">
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary pr-4 pl-4 mr-5 ml-5 " data-toggle="collapse"
+                                    data-target="#save">Edit</button>
+                                <div id="save" class="collapse ml-5 mr-5">
+                                    <button type="button" id="save"
+                                        class="btn btn-success pr-4 pl-4 mr-5 ml-5 ">Save</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+        </fieldset>
+
+
+        <!--div class="container">
+
+            <br>
+            <h2>Ratings and Reviews</h2>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Patient name</th>
+                        <th>Ratings</th>
+                        <th>Reviews</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in rate %}
+                    <tr>
+                        <td>{{i.patient.name}}</td>
+                        <td>{{i.rating}}/5</td>
+                        <td>{{i.review}}</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div-->
+
+
+    </div>
+
+
+<!-- END Content -->
+</div>
+
+<!-- END Container -->
+
+
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+        $('#save').click(function (event) {
+
+
+                $.ajax({
+                    url: "{% url 'saveddata' duser.username %}",
+                    type: "POST",
+                    data: {
+
+                        'csrfmiddlewaretoken': '{{ csrf_token }}',
+                        "name": document.getElementById('id_name').value,
+                        "email":document.getElementById('id_email').value,
+                        "gender": document.getElementById('id_gender').value,
+                        "mobile_no": document.getElementById('id_mobile_no').value,
+                        "department": document.getElementById('id_department').value
+
+
+                    },
+
+                    success: function () {
+                        alert("new data is saved.")
+                    }
+
+                });
+
+
+        });
+    });
+
+</script>
+
+{% endblock %}

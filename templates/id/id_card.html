@@ -1,0 +1,104 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'id/idCard.css' %}" rel="stylesheet" />
+    <title>ID Card</title>
+
+</head>
+{% block body %}
+
+
+<center>
+    <h1>Student ID Card</h1>
+</center>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <center>
+                <form method="get">
+                    {{myStudentFilter.form}}
+
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </center>
+        </div>
+    </div>
+</div>
+<br>
+
+{% comment %} <div class="row">
+    <div class="col-sm-12">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Section</th>
+                    <th>Period</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for student in students %}
+
+                <tr>
+                    <td>{{ student.firstname }}</td>
+                    <td>{{ student.lastname }}</td>
+
+                    <td>{{ student.registration_id }}</td>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+
+
+
+<div class="container">
+    <div class="padding">
+        <div class="font">
+            {% for student in students %}
+            <div class="top">
+                <img src={{ student.qr_pic.url }}>
+            </div>
+            <div class="bottom">
+
+                <p>{{ student.firstname }} {{ student.lastname }}</p>
+                <p class="desi">UX/UI Designer</p>
+                {% comment %} <div class="barcode">
+                    <img src={{ student.qr_pic.url }}>
+                </div> {% endcomment %}
+                <br>
+                <p class="text">{{ student.branch }}</p>
+                <p class="text">{{ student.registration_id }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class="back"><br><br>
+        <h1 class="Details">Information</h1>
+        <hr class="hr">
+        <div class="details-info">
+            <p><b>Email : </b></p>
+            <p>Planicsdevloper@gmail.com</p>
+            <p><b>Mobile No: </b></p>
+            <p>8460304196</p>
+            <p><b>Office Address:</b></p>
+            <p>part-1,89 harinadad d...sdv..sdf..sfd..sd.road,india</p>
+        </div>
+
+
+        <hr>
+    </div>
+</div> {% endcomment %}
+</div>
+</div>
+{% endblock %}
+
+</html>
