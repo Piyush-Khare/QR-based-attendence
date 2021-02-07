@@ -4,6 +4,14 @@
 
 {% block head %}
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+  integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+  integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
 {% endblock %}
 
@@ -13,8 +21,8 @@
 {% block body %}
 
 
-<br><br><br>
-<div class="container mt-5 mb-3" style="width:fit-content;">
+
+{% comment %} <div class="container mt-5 mb-3" style="width:fit-content;">
   <center>
     <h1>Sign-Up As</h1>
   </center>
@@ -39,14 +47,14 @@
       </div>
     </div>
   </form>
-</div>
+</div> {% endcomment %}
 
 
 
 
 
 
-<br><br>
+
 
 
 
@@ -97,8 +105,8 @@
 
 <!-- Large modal -->
 
-<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
+{% comment %} <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog"
+  aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
@@ -125,6 +133,99 @@
 
     </div>
   </div>
+</div> {% endcomment %}
+
+
+
+
+
+
+
+<!--Crousel Images-->
+
+<div id="carouselExampleInterval" class="carousel slide my-2 mx-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://source.unsplash.com/random/1600x400" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://source.unsplash.com/WLUHO9A_xik/1600x400" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="//lms.allduniv.ac.in/pluginfile.php/1/theme_adaptable/p1/1607236350/frontendvcmessage.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+
+
+
+
+<!--Jumbotron PanelList-->
+<div class="jumbotron jumbotron-fluid" style="padding: 4rem 2rem">
+  <h2 style="font-family: fantasy; color:#0062cc; padding-left: 10px;">ADMINISTRATION
+    <hr width="100%" color="#0062cc">
+  </h2>
+  <div class="container container-fluid">
+    <div class="card-deck">
+      <div class="card"
+        style="background: linear-gradient(to bottom, #66ccff -12%, #ffffff 103%); border-color: #0062cc;">
+        <div class="card-body text-center">
+          <div class="card" style="background: rgba(0,0,0,0);">
+            <img class="card-img-top yall_lazy yall_loaded"
+              data-src="https://www.allduniv.ac.in/assets/img/President.jpg" alt="Mr. President"
+              src="https://www.allduniv.ac.in/assets/img/President.jpg">
+            <h5 class="text-dark">Visitor</h5>
+            <h6 class="text-primary">Shri Ram Nath Kovind <br> President of India</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card"
+        style="background: linear-gradient(to bottom, #66ccff -12%, #ffffff 103%); border-color: #0062cc;">
+        <div class="card-body text-center">
+          <div class="card" style="background: rgba(0,0,0,0);">
+            <img class="card-img-top yall_lazy yall_loaded"
+              data-src="https://www.allduniv.ac.in/assets/img/Governor.jpg" alt="Chief Rector"
+              src="https://www.allduniv.ac.in/assets/img/Governor.jpg">
+            <h5 class="text-dark">Chief Rector</h5>
+            <h6 class="text-primary">Smt. Anandiben Patel <br> Governor of Uttar Pradesh</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card"
+        style="background: linear-gradient(to bottom, #66ccff -12%, #ffffff 103%); border-color: #0062cc;">
+        <div class="card-body text-center">
+          <div class="card" style="background: rgba(0,0,0,0);">
+            <img class="card-img-top yall_lazy yall_loaded"
+              data-src="https://www.allduniv.ac.in/assets/img/Chancellor.jpg" alt="Chancellor"
+              src="https://www.allduniv.ac.in/assets/img/Chancellor.jpg">
+            <h5 class="text-dark">Chancellor</h5>
+            <h6 class="text-primary">Prof. Goverdhan Mehta <br> National Research Professor
+              Lilly-Jubilant Chair</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card"
+        style="background: linear-gradient(to bottom, #66ccff -12%, #ffffff 103%); border-color: #0062cc;">
+        <div class="card-body text-center">
+          <div class="card" style="background: rgba(0,0,0,0);">
+            <img class="card-img-top yall_lazy yall_loaded" data-src="https://www.allduniv.ac.in/assets/img/VCMaam.jpg"
+              alt="Vice Chancellor" src="https://www.allduniv.ac.in/assets/img/VCMaam.jpg">
+            <h5 class="text-dark">Vice Chancellor</h5>
+            <h6 class="text-primary">Prof. Sangita Srivastava</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -132,43 +233,28 @@
 
 
 
+<!--Footer-->
 
-
-<br><br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="footer" class="card bg-dark text-white">
+<div id="footer" class="card bg-dark text-center text-white">
   <div class="card-body">
     Contact-
 
-    <ul>
 
-      <li>
-        <h5 class="mb-1">Email: bias@gmail.com</h5>
-      </li>
-      <li>
-        <h5 class="mb-1">Contact no. 7355789992</h5>
-      </li>
-      <li>
-        <h5 class="mb-1">Address: Science Faculty, University of Allahabad</h5>
-        <div class="footer-copyright text-center">© 2020 Copyright:
-          <a href="#"> bias.com</a>
-        </div>
-      </li>
 
-    </ul>
+
+    <h5 class="mb-1">Email: bias@gmail.com</h5>
+
+
+    <h5 class="mb-1">Contact no. 7355789992</h5>
+
+
+    <h5 class="mb-1">Address: Science Faculty, University of Allahabad</h5>
+    <div class="footer-copyright text-center">© 2020 Copyright:
+      <a href="#"> bias.com</a>
+    </div>
+
+
+
   </div>
 </div>
 
@@ -179,7 +265,7 @@
 
 
 
-</div>
+{% comment %} </div> {% endcomment %}
 
 
 
