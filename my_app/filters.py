@@ -12,4 +12,4 @@ class StudentFilter(django_filters.FilterSet):
     class Meta:
         model = Student
         fields = '__all__'
-        exclude = ['branch', 'year', 'section', 'qr_pic']
+        exclude = ['branch', 'semester', 'section', 'qr_pic']

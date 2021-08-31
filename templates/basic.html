@@ -41,7 +41,7 @@
 
 		body {
 
-			background-image: url("{% static 'homepage/gray.jpg' %}");
+			{% comment %} background-image: url("{% static 'homepage/gray.jpg' %}"); {% endcomment %}
 			background-attachment: fixed;
 			opacity: 0.93;
 			background-repeat: no-repeat;
@@ -132,7 +132,7 @@
 									<h4>Logout <i class="fa fa-lock"></i></h4>
 								</div>
 								<div class="modal-body"><i class="fa fa-question-circle"></i><span
-										style="color: rgb(42, 187, 6);">{{user.patient.name}}</span>, Are you sure you
+										style="color: rgb(42, 187, 6);">{{user.teacher.name}}</span> Are you sure you
 									want to log-out?</div>
 								<div class="modal-footer"><a href="{% url 'logout' %}"
 										class="btn btn-primary btn-block">Logout</a></div>

@@ -39,18 +39,18 @@ class teacher(models.Model):
 class Student(models.Model):
 
     BRANCH = (
-        ('CSE','CSE'),
-        ('IT','IT'),
-        ('ECE','ECE'),
-        ('CHEM','CHEM'),
-        ('MECH','MECH'),
-        ('EEE','EEE'),
+        ('MCA','MCA'),
+        ('BCA','BCA'),
+        ('PGDCA','PGDCA'),
+        ('O Level','O Level'),
     )
-    YEAR = (
+    SEMESTER = (
         ('1','1'),
         ('2','2'),
         ('3','3'),
         ('4','4'),
+        ('5','5'),
+        ('6','6'),
     )
     SECTION = (
         ('A','A'),
@@ -62,7 +62,7 @@ class Student(models.Model):
     lastname = models.CharField(max_length=200, null=True, blank=True)
     registration_id = models.CharField(max_length=200, null=True)
     branch = models.CharField(max_length=100, null=True, choices=BRANCH)
-    year = models.CharField(max_length=100, null=True, choices=YEAR)
+    semester = models.CharField(max_length=100, null=True, choices=SEMESTER)
     section = models.CharField(max_length=100, null=True, choices=SECTION)
     qr_pic = models.ImageField(upload_to='media/', null=True, blank=True)
 
@@ -90,7 +90,7 @@ class Attendence(models.Model):
     date = models.DateField(auto_now_add = True, null = True)
     time = models.TimeField(auto_now_add=True, null = True)
     branch = models.CharField(max_length=200, null = True)
-    year = models.CharField(max_length=200, null = True)
+    semester = models.CharField(max_length=200, null = True)
     section = models.CharField(max_length=200, null = True)
     period = models.CharField(max_length=200, null = True)
     status = models.CharField(max_length=200, null = True, default='Absent')
